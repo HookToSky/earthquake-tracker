@@ -4,7 +4,7 @@ import styles from './index.module.sass';
 
 const LoadingSpinner: FC = () => {
     return (
-        <div className={styles.loader}>
+        <div data-testid="spinner" className={styles.loader}>
             <img src={loader} alt="loader" />
         </div>
     );

@@ -4,14 +4,14 @@ import { useLeaflet } from 'react-leaflet';
 import LoadingSpinner from '../loadingSpinner';
 import { geojsonMarkerOptions } from '../marker';
 import { EarthquakeProps } from '../../types/EarthquakeProps';
-import { useEarthquakesFetcher } from './customHooks'
+import { useEarthquakesFetcher } from '../hooks/useEartquakeFetcher'
 import { onEachFeature } from './helpers';
 
 
 let geojson: GeoJSON;
 
 const EarthquakeMap: React.FC = () => {
-    const [earthquakes, loading] = useEarthquakesFetcher();
+    const { earthquakes, loading } = useEarthquakesFetcher();
     const { map } = useLeaflet();
 
     useEffect(() => {
